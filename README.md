@@ -1,8 +1,5 @@
 # OCCU iOS
 
-<br>
-<br>
-
 > react-native app
 
 <hr/>
