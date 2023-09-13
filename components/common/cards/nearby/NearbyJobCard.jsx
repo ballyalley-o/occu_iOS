@@ -1,7 +1,7 @@
 import React from 'react'
 import { View, Text } from 'react-native'
 
-import styles from '@nearbyjobcard.style'
+import styles from './nearbyjobcard.style'
 
 const NearbyJobCard = () => {
   return (

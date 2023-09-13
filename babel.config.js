@@ -7,11 +7,14 @@ module.exports = function (api) {
       'react-native-reanimated/plugin',
       require.resolve('expo-router/babel'),
       [
-        'module-resolver',
+        'module:react-native-dotenv',
         {
-          alias: {
-            '@constants': './constants',
-          },
+          moduleName: '@env',
+          path: '.env',
+          blacklist: null,
+          whitelist: null,
+          safe: false,
+          allowUndefined: true,
         },
       ],
     ],
