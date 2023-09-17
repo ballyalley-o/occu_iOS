@@ -1,7 +1,7 @@
 import { View, Text, TouchableOpacity, ActivityIndicator } from 'react-native'
 // hooks
 import { useRouter } from 'expo-router'
-import useFetch from '../../../hooks/use-fetch/useFetch'
+import { useFetch } from '../../../hooks'
 
 // components
 import NearbyJobCard from '../../common/cards/nearby/NearbyJobCard'

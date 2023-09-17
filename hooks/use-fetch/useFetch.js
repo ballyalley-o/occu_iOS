@@ -2,8 +2,6 @@ import { useState, useEffect } from 'react'
 import axios from 'axios'
 // util
 import { apiGET } from './options'
-// constants
-import GLOBAL from '../../config/config'
 
 const useFetch = (endpoint, query) => {
   const [data, setData] = useState([])

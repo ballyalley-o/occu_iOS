@@ -11,11 +11,11 @@ import { useRouter } from 'expo-router'
 // styles
 import styles from './welcome.style'
 // constants
-import { icons, SIZES } from '../../../constants'
-import { jobTypes } from './job-types'
+import { icons, TABS, SIZES } from '../../../constants'
 
 const Welcome = () => {
   const [activeJobType, setActiveJobType] = useState(jobTypes[0])
+  const [actieTab, setActiveTab] = useState(TABS.jobTypes[0])
   const router = useRouter()
 
   return (
