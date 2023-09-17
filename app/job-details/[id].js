@@ -34,6 +34,21 @@ const JobDetails = () => {
   })
 
   const onRefresh = () => {}
+  const displayTabContent = () => {
+    switch (activeTab) {
+      case 'Qualifications':
+        return (
+          <Specifics
+            titile='Qualifcations'
+            points={data[0].job_highlights?.qualifications ?? ['N/A']}
+          />
+        )
+      case 'About':
+      case 'Responsibilities':
+      default:
+        break
+    }
+  }
 
   return (
     <SafeAreaView style={default_styles.safeAreaView}>
@@ -80,11 +95,12 @@ const JobDetails = () => {
                 companyName={data[0].employer_name}
                 location={data[0].job_country}
               />
-              <JobAbout
+              <JobTabs
                 tabs={tabs}
                 activeTab={activeTab}
                 setActiveTab={setActiveTab}
               />
+              {displayTabContent}
             </View>
           )}
         </ScrollView>

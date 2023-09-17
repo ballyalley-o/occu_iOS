@@ -25,6 +25,7 @@ const Welcome = () => {
         <Text style={styles.welcomeMessage}>Find the Job that you love</Text>
       </View>
       <View style={styles.searchContainer}>
+        r
         <View style={styles.searchWrapper}>
           <TextInput
             styles={styles.searchInput}
@@ -43,7 +44,7 @@ const Welcome = () => {
       </View>
       <View style={styles.tabsContainer}>
         <FlatList
-          data={jobTypes}
+          data={TABS.jobTypes}
           renderItem={({ item }) => (
             <TouchableOpacity
               style={styles.tab(activeJobType, item)}
