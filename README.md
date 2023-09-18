@@ -1,19 +1,16 @@
 # OCCU iOS
 
-> react-native app
+> Built with react-native, react, javascript, node and expo.
 
 <hr/>
 
 <br>
 <br>
 <br>
-## 🚀 How to use
+
+## How to use
 
 ```sh
 npm run dev
 ```
 
-## 📝 Notes
-
-- [Expo Router: Docs](https://expo.github.io/router)
-- [Expo Router: Repo](https://github.com/expo/router)
