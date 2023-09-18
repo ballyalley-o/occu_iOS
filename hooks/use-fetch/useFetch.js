@@ -27,9 +27,8 @@ const useFetch = (endpoint, query) => {
       setData(response.data.data)
       setIsLoading(false)
     } catch (error) {
-      console.error(error)
       setError(error)
-      alert('An Error has occured')
+      console.log(error)
     } finally {
       setIsLoading(false)
     }

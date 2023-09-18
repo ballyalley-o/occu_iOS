@@ -7,7 +7,7 @@ const TabButton = ({ name, activeTab, onHandleSearchType }) => (
     style={styles.btn(name, activeTab)}
     onPress={onHandleSearchType}
   >
-    <Text styles={styles.btnText(name, activeTab)}>{name}</Text>
+    <Text styles={styles.btnText(name, activeTab)}>{name?.toUpperCase()}</Text>
   </TouchableOpacity>
 )
 

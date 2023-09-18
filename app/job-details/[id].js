@@ -22,31 +22,34 @@ import {
 //styles
 import { default_styles } from '../../theme'
 // constants
-import { COLORS, SIZES, icons } from '../../constants'
+import { COLORS, SIZES, TABS, icons } from '../../constants'
 
 const JobDetails = () => {
   const [refreshing, setRefreshing] = useState(false)
+  const [activeTab, setActiveTab] = useState(TABS.jobs[0])
   const params = useSearchParams()
   const router = useRouter()
+
+  const onRefresh = () => {}
 
   const { data, isLoading, error, refetch } = useFetch('job-details', {
     job_id: params.id,
   })
 
-  const onRefresh = () => {}
   const displayTabContent = () => {
     switch (activeTab) {
       case 'Qualifications':
         return (
           <Specifics
-            titile='Qualifcations'
-            points={data[0].job_highlights?.qualifications ?? ['N/A']}
+            title='Qualifications'
+            points={data[0].job_highlights?.Qualifications ?? ['N/A']}
           />
         )
       case 'About':
+        return <JobAbout info={data[0].job_description ?? 'Empty'} />
       case 'Responsibilities':
       default:
-        break
+        return null
     }
   }
 
@@ -96,11 +99,11 @@ const JobDetails = () => {
                 location={data[0].job_country}
               />
               <JobTabs
-                tabs={tabs}
+                tabs={TABS.jobs}
                 activeTab={activeTab}
                 setActiveTab={setActiveTab}
               />
-              {displayTabContent}
+              {displayTabContent()}
             </View>
           )}
         </ScrollView>

@@ -25,7 +25,6 @@ const Welcome = () => {
         <Text style={styles.welcomeMessage}>Find the Job that you love</Text>
       </View>
       <View style={styles.searchContainer}>
-        r
         <View style={styles.searchWrapper}>
           <TextInput
             styles={styles.searchInput}
