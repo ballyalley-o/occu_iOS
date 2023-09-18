@@ -1,3 +1,11 @@
+<br>
+<br>
+<html>
+    <div align="center">
+        <img src='https://i.ibb.co/MBQp6Tv/occu.png'>
+    </div>
+</html>
+
 # OCCU iOS
 
 > Built with react-native, react, javascript, node and expo.
@@ -13,4 +21,3 @@
 ```sh
 npm run dev
 ```
-
