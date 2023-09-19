@@ -1,12 +1,25 @@
 import React from 'react'
-import { View, Text } from 'react-native'
-
+import { View, Text, TouchableOpacity, Image, Linking } from 'react-native'
+//styles
 import styles from './footer.style'
+import { icons } from '../../../constants'
 
-const Footer = () => {
+const Footer = ({ url }) => {
   return (
-    <View>
-      <Text>Footer</Text>
+    <View style={styles.container}>
+      <TouchableOpacity style={styles.likeBtn}>
+        <Image
+          source={icons.bookmarkOutline}
+          resizeMode='contain'
+          style={styles.likeBtnImage}
+        />
+      </TouchableOpacity>
+      <TouchableOpacity
+        style={styles.applyBtn}
+        onPress={() => Linking.openURL(url)}
+      >
+        <Text style={styles.applyBtnText}>APPLY</Text>
+      </TouchableOpacity>
     </View>
   )
 }

@@ -11,17 +11,12 @@ import {
 import { Stack, useRouter, useSearchParams } from 'expo-router'
 import { useFetch } from '../../hooks'
 // components
-import {
-  Company,
-  JobAbout,
-  JobFooter,
-  JobTabs,
-  ScreenHeaderBtn,
-} from '../../components'
-import { displayTabContent } from '../../components/jobdetails/tab-contents'
+import { Company, JobFooter, JobTabs, ScreenHeaderBtn } from '../../components'
+// import displayTabContent from '../../components/jobdetails/tab-contents'
 //styles
 import { default_styles } from '../../theme'
 // constants
+import { GLOBAL } from '../../config'
 import { COLORS, SIZES, TABS, icons } from '../../constants'
 
 const JobDetails = () => {
@@ -36,28 +31,28 @@ const JobDetails = () => {
     job_id: params.id,
   })
 
-  // const displayTabContent = () => {
-  //   switch (activeTab) {
-  //     case 'Qualifications':
-  //       return (
-  //         <Specifics
-  //           title='Qualifications'
-  //           points={data[0].job_highlights?.Qualifications ?? ['N/A']}
-  //         />
-  //       )
-  //     case 'About':
-  //       return <JobAbout info={data[0].job_description ?? 'Empty'} />
-  //     case 'Responsibilities':
-  //       return (
-  //         <Specifics
-  //           title='Responsibilities'
-  //           points={data[0].job_highlights?.Responsibilities ?? ['N/A']}
-  //         />
-  //       )
-  //     default:
-  //       return null
-  //   }
-  // }
+  const displayTabContent = () => {
+    switch (activeTab) {
+      case 'Qualifications':
+        return (
+          <Specifics
+            title='Qualifications'
+            points={data[0].job_highlights?.Qualifications ?? ['N/A']}
+          />
+        )
+      case 'About':
+        return <JobAbout info={data[0].job_description ?? 'Empty'} />
+      case 'Responsibilities':
+        return (
+          <Specifics
+            title='Responsibilities'
+            points={data[0].job_highlights?.Responsibilities ?? ['N/A']}
+          />
+        )
+      default:
+        return null
+    }
+  }
 
   return (
     <SafeAreaView style={default_styles.safeAreaView}>
@@ -109,10 +104,14 @@ const JobDetails = () => {
                 activeTab={activeTab}
                 setActiveTab={setActiveTab}
               />
-              {displayTabContent(data)}
+              {displayTabContent()}
             </View>
           )}
         </ScrollView>
+
+        <JobFooter
+          url={data[0]?.ActivityIndicator.job_google_link ?? GLOBAL.CAREERS}
+        />
       </>
     </SafeAreaView>
   )

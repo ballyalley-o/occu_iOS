@@ -4,13 +4,16 @@ import { TABS } from '../../../constants'
 const ABOUT = TABS.jobs[0]
 const QUALIFICATIONS = TABS.jobs[1]
 const RESPONSIBILITIES = TABS.jobs[2]
+console.log(ABOUT)
+console.log(QUALIFICATIONS)
+console.log(RESPONSIBILITIES)
 
-const displayTabContent = (data) => {
+const displayTabContent = ({ data }) => {
   switch (activeTab) {
     case QUALIFICATIONS:
       return (
         <Specifics
-          title='Qualifications'
+          title={QUALIFICATIONS}
           points={data[0].job_highlights?.Qualifications ?? ['N/A']}
         />
       )
@@ -19,7 +22,7 @@ const displayTabContent = (data) => {
     case RESPONSIBILITIES:
       return (
         <Specifics
-          title='Responsibilities'
+          title={RESPONSIBILITIES}
           points={data[0].job_highlights?.Responsibilities ?? ['N/A']}
         />
       )
