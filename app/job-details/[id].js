@@ -25,7 +25,11 @@ const JobDetails = () => {
   const params = useSearchParams()
   const router = useRouter()
 
-  const onRefresh = () => {}
+  const onRefresh = useCallback(() => {
+    setRefreshing(true)
+    refetch()
+    setRefreshing(false)
+  }, [])
 
   const { data, isLoading, error, refetch } = useFetch('job-details', {
     job_id: params.id,
