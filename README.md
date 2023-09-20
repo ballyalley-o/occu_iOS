@@ -19,5 +19,10 @@
 ## How to use
 
 ```sh
-npm run dev
+npm start
 ```
+
+```sh
+expo-cli start --tunnel
+```
+
