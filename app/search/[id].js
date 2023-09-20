@@ -13,16 +13,15 @@ import axios from 'axios'
 import { GLOBAL } from '../../config'
 import { ScreenHeaderBtn, NearbyJobCard } from '../../components'
 import { COLORS, icons, SIZES } from '../../constants'
-import styles from '../../styles/search'
+import styles from '../../theme/styles/search'
 
 const JobSearch = () => {
-  const params = useSearchParams()
-  const router = useRouter()
-
   const [searchResult, setSearchResult] = useState([])
   const [searchLoader, setSearchLoader] = useState(false)
   const [searchError, setSearchError] = useState(null)
   const [page, setPage] = useState(1)
+  const params = useSearchParams()
+  const router = useRouter()
 
   const handleSearch = async () => {
     setSearchLoader(true)
