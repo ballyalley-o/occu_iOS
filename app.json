@@ -8,6 +8,22 @@
       "expo-router"
     ],
     "name": "occu_ios",
-    "slug": "occu_ios"
+    "slug": "occu_ios",
+    "extra": {
+      "router": {
+        "origin": false
+      },
+      "eas": {
+        "projectId": "c02929d7-4749-4768-8208-67cfe870c881"
+      }
+    },
+    "runtimeVersion": {
+      "policy": "appVersion"
+    },
+    "updates": {
+      "url": "https://u.expo.dev/c02929d7-4749-4768-8208-67cfe870c881"
+    },
+    "android": {},
+    "ios": {}
   }
 }
